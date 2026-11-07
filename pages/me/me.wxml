@@ -1,0 +1,71 @@
+<view class="viewport me-page {{ isDarkMode ? '' : 'light' }}">
+  <view class="profile-card glass-card fade-in" wx:if="{{userInfo}}">
+    <image class="avatar glow-anim" src="{{userInfo.avatarUrl}}"></image>
+    <view class="info">
+      <text class="nickname neon-text">{{ userInfo.nickname }}</text>
+      <text class="tag">💻 极客开发者</text>
+    </view>
+    <view class="logout-btn" catchtap="logout">退出</view>
+  </view>
+
+  <view class="profile-card glass-card login-card fade-in" wx:else bindtap="openLoginPanel">
+    <view class="avatar placeholder-avatar float-anim">
+      <text class="avatar-emoji">👤</text>
+    </view>
+    <view class="info">
+      <text class="nickname">点击登录</text>
+      <text class="tag">微信授权 · 展示你的专属身份</text>
+    </view>
+  </view>
+
+  <view class="stats-grid glass-card fade-in stagger-1">
+    <view class="stat-item" hover-class="stat-hover" bindtap="goToVocabList">
+      <text class="stat-num neon-text">{{ displayCount }}</text>
+      <text class="stat-label">已收录词汇</text>
+    </view>
+    <view class="stat-item" hover-class="stat-hover" bindtap="goToMasteredList">
+      <text class="stat-num neon-text">{{ masteredCount }}</text>
+      <text class="stat-label">已攻克词汇</text>
+    </view>
+    <view class="stat-item" hover-class="stat-hover">
+      <text class="stat-num neon-text">{{ studyProgress }}%</text>
+      <text class="stat-label">学习进度</text>
+    </view>
+  </view>
+
+  <view class="progress-section glass-card fade-in stagger-2">
+    <view class="progress-title">🏆 词库收集进度</view>
+    <view class="progress-bar-bg">
+      <view class="progress-bar-fill" style="width: {{ collectProgress + '%' }};"></view>
+    </view>
+    <view class="progress-text">{{ collectProgress }}% (目标：{{ targetWords }}词)</view>
+  </view>
+
+  <view class="menu-list glass-card fade-in stagger-3">
+    <view class="menu-item" hover-class="item-hover" bindtap="goToPoster">
+      <text class="menu-text">🎁 生成分享海报</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" hover-class="item-hover" bindtap="showAbout">
+      <text class="menu-text">📖 关于编程词典</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" hover-class="item-hover" bindtap="clearCache">
+      <text class="menu-text">🧹 清除本地缓存</text>
+      <text class="arrow">></text>
+    </view>
+  </view>
+
+  <view class="login-mask" wx:if="{{loginPanelVisible}}" catchtouchmove="true">
+    <view class="login-panel glass-card">
+      <view class="panel-title neon-text">登录编程词典</view>
+      <button class="avatar-picker" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+        <image wx:if="{{avatarUrl}}" class="picker-avatar" src="{{avatarUrl}}"></image>
+        <text wx:else class="picker-text">选择头像</text>
+      </button>
+      <input class="nickname-input" type="nickname" placeholder="请输入昵称" placeholder-class="ph-color" bindinput="onNicknameInput" value="{{nickname}}" />
+      <button class="neon-btn confirm-btn" bindtap="doLogin">确认登录</button>
+      <view class="cancel-btn" bindtap="closeLoginPanel">暂不登录</view>
+    </view>
+  </view>
+</view>

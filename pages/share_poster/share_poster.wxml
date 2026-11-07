@@ -1,0 +1,7 @@
+<view class="viewport {{ isDarkMode ? '' : 'light' }}">
+  <canvas type="2d" id="poster" class="poster-canvas"></canvas>
+  <view class="actions">
+    <button class="neon-btn save-btn" bindtap="savePoster">💾 保存到相册</button>
+    <button class="share-btn" open-type="share">🎁 转发给好友</button>
+  </view>
+</view>

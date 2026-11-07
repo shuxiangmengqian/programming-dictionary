@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/friend/friend",
+    "pages/me/me",
+    "pages/index/index",
+    "pages/vocab_list/vocab_list",
+    "pages/share_poster/share_poster"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0a0e27",
+    "navigationBarTitleText": "编程词典",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#0a0e27",
+    "backgroundColorTop": "#0a0e27",
+    "backgroundColorBottom": "#0a0e27"
+  },
+  "tabBar": {
+    "color": "#8a8fb0",
+    "selectedColor": "#7c5cff",
+    "backgroundColor": "#0a0e27",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "词典",
+        "iconPath": "static/tabbar/dict.png",
+        "selectedIconPath": "static/tabbar/dict_active.png"
+      },
+      {
+        "pagePath": "pages/friend/friend",
+        "text": "速查",
+        "iconPath": "static/tabbar/community.png",
+        "selectedIconPath": "static/tabbar/community_active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "static/tabbar/mine.png",
+        "selectedIconPath": "static/tabbar/mine_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

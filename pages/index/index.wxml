@@ -1,0 +1,49 @@
+<view class="viewport {{ isDarkMode ? '' : 'light' }}">
+  <view class="page-title fade-in">💻 编程词典</view>
+
+  <view class="search-box fade-in">
+    <input class="search-input" placeholder="🔍 搜索你想要的单词..." bindinput="onSearchInput" placeholder-class="ph-color" />
+  </view>
+
+  <scroll-view class="tab-scroll fade-in" scroll-x="true" show-scrollbar="false">
+    <view class="tab-list">
+      <view class="tab-item {{ currentTab === item.value ? 'active' : '' }}" wx:for="{{tabs}}" wx:key="value" bindtap="switchTab" data-value="{{item.value}}">
+        {{ item.name }}
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="word-card glass-card fade-in" wx:for="{{words}}" wx:key="_id">
+    <view class="card-header">
+      <view class="word-left">
+        <text class="word-text">{{ item.word }}</text>
+        <text class="speaker" bindtap="playVoice" data-word="{{ item.word }}">🔊</text>
+      </view>
+      <text class="chip">{{ item.language }}</text>
+    </view>
+    <view class="meaning-text">{{ item.meaning }}</view>
+    <view class="exp-text">{{ item.explanation }}</view>
+
+    <view class="code-box" bindtap="copyCode" data-code="{{ item.code }}">
+      <text>{{ item.code }}</text>
+      <text class="copy-tip">点击复制</text>
+    </view>
+
+    <view class="master-action">
+      <view class="status-btn {{ item.isMastered ? 'mastered' : 'unmastered' }}"
+            catchtap="toggleMaster"
+            data-id="{{ item._id }}"
+            data-status="{{ item.isMastered }}">
+        <text wx:if="{{ item.isMastered }}">✅ 已掌握</text>
+        <text wx:else>⏳ 标记为熟悉</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="neon-loading" wx:if="{{loading}}"></view>
+  <view class="load-tip" wx:if="{{!loading && !hasMore && words.length > 0}}">— 已经到底啦 —</view>
+
+  <view class="empty-tip" wx:if="{{!loading && words.length === 0}}">
+    没有找到相关单词，换个词试试吧~
+  </view>
+</view>

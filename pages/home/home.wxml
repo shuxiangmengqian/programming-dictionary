@@ -1,0 +1,55 @@
+<view class="viewport {{ isDarkMode ? '' : 'light' }}">
+  <view class="header fade-in">
+    <view class="greeting-wrap">
+      <text class="greeting neon-text">{{ typewriterText }}</text>
+      <text class="subtitle">今天也要写出没有 Bug 的代码哦</text>
+    </view>
+    <view class="theme-toggle" bindtap="toggleTheme">
+      <text>{{ isDarkMode ? '☀️' : '🌙' }}</text>
+    </view>
+  </view>
+
+  <view class="daily-card glass-card glow-anim fade-in stagger-1" wx:if="{{hasDailyWord}}" bindtap="goToDict" data-lang="all">
+    <view class="daily-header">
+      <text class="daily-title">📅 每日一词</text>
+      <text class="chip">{{ dailyWord.language }}</text>
+    </view>
+    <view class="daily-content">
+      <text class="daily-word">{{ dailyWord.word }}</text>
+      <text class="daily-meaning">{{ dailyWord.meaning }}</text>
+    </view>
+  </view>
+
+  <view class="category-grid">
+    <view class="cat-card glass-card html-card fade-in stagger-1" hover-class="card-hover" bindtap="goToDict" data-lang="HTML">
+      <text class="cat-emoji">🧱</text>
+      <text class="cat-title">HTML</text>
+      <text class="cat-desc">网页骨架基础</text>
+      <text class="cat-arrow">›</text>
+    </view>
+    <view class="cat-card glass-card css-card fade-in stagger-2" hover-class="card-hover" bindtap="goToDict" data-lang="CSS">
+      <text class="cat-emoji">🎨</text>
+      <text class="cat-title">CSS</text>
+      <text class="cat-desc">网页美化魔法</text>
+      <text class="cat-arrow">›</text>
+    </view>
+    <view class="cat-card glass-card js-card fade-in stagger-3" hover-class="card-hover" bindtap="goToDict" data-lang="JavaScript">
+      <text class="cat-emoji">⚡</text>
+      <text class="cat-title">JavaScript</text>
+      <text class="cat-desc">网页交互灵魂</text>
+      <text class="cat-arrow">›</text>
+    </view>
+    <view class="cat-card glass-card py-card fade-in stagger-4" hover-class="card-hover" bindtap="goToDict" data-lang="Python">
+      <text class="cat-emoji">🐍</text>
+      <text class="cat-title">Python / Java</text>
+      <text class="cat-desc">后端与算法基础</text>
+      <text class="cat-arrow">›</text>
+    </view>
+  </view>
+
+  <view class="action-area fade-in stagger-4">
+    <button class="neon-btn start-btn" hover-class="btn-hover" bindtap="goToDict" data-lang="all">🚀 进入编程词典库</button>
+    <button class="share-btn" open-type="share">🎁 分享给好友</button>
+    <text class="tips">已有 110+ 常用编程词汇收录</text>
+  </view>
+</view>

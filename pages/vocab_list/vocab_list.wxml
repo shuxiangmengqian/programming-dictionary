@@ -1,0 +1,17 @@
+<view class="viewport {{ isDarkMode ? '' : 'light' }}">
+  <view class="title fade-in">📚 {{ pageTitle }}</view>
+  <view class="subtitle fade-in">共 {{ totalWords }} 个核心词汇，点击可复制代码</view>
+
+  <view class="vocab-card glass-card fade-in" wx:for="{{words}}" wx:key="_id" bindtap="copyCode" data-code="{{item.code}}">
+    <view class="word-head">
+      <text class="word">{{ item.word }}</text>
+      <text class="meaning">{{ item.meaning }}</text>
+      <text class="chip">{{ item.language }}</text>
+    </view>
+    <view class="code-snippet">{{ item.code }}</view>
+  </view>
+
+  <view class="neon-loading" wx:if="{{loading}}"></view>
+  <view class="load-tip" wx:if="{{!loading && !hasMore && words.length > 0}}">— 已经到底啦 —</view>
+  <view class="empty-tip" wx:if="{{!loading && words.length === 0}}">还没有词汇，快去词典学习吧~</view>
+</view>

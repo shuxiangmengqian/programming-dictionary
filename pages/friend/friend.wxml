@@ -1,0 +1,25 @@
+<view class="viewport {{ isDarkMode ? '' : 'light' }}">
+  <view class="header fade-in">
+    <text class="title neon-text">⚡ 代码速查库</text>
+    <text class="subtitle">输入关键词（如：居中、防抖），一键复制</text>
+  </view>
+
+  <view class="search-box fade-in">
+    <input class="search-input" placeholder="🔍 搜索常用代码片段..." bindinput="onSearch" placeholder-class="ph-color" />
+  </view>
+
+  <view class="snippet-card glass-card fade-in" wx:for="{{snippets}}" wx:key="id">
+    <view class="card-top">
+      <text class="snippet-title">{{ item.title }}</text>
+      <text class="chip">{{ item.tag }}</text>
+    </view>
+    <view class="code-box" bindtap="copyCode" data-code="{{ item.code }}">
+      <text>{{ item.code }}</text>
+      <text class="copy-tip">点击复制</text>
+    </view>
+  </view>
+
+  <view class="empty-tip" wx:if="{{snippets.length === 0}}">
+    没有找到相关代码，换个词试试~
+  </view>
+</view>

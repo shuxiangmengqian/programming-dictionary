@@ -1,0 +1,231 @@
+.page-title {
+  font-size: 40rpx;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 28rpx;
+  text-align: center;
+  letter-spacing: 2rpx;
+}
+
+.search-box {
+  margin-bottom: 26rpx;
+}
+
+.search-input {
+  height: 84rpx;
+  line-height: 84rpx;
+  padding: 0 34rpx;
+  border-radius: 50rpx;
+  font-size: 28rpx;
+  color: #e8eaf6;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1rpx solid rgba(167, 139, 250, 0.35);
+  box-shadow: 0 6rpx 24rpx rgba(124, 92, 255, 0.2);
+  box-sizing: border-box;
+}
+
+.ph-color {
+  color: #8a8fb0;
+}
+
+.tab-scroll {
+  width: 100%;
+  white-space: nowrap;
+  margin-bottom: 30rpx;
+}
+
+.tab-list {
+  display: inline-flex;
+}
+
+.tab-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 14rpx 30rpx;
+  margin-right: 18rpx;
+  background: rgba(255, 255, 255, 0.07);
+  color: #9aa0c4;
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+  border-radius: 40rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.tab-item.active {
+  background: linear-gradient(135deg, #7c5cff 0%, #4f8cff 100%);
+  color: #ffffff;
+  font-weight: 700;
+  border-color: transparent;
+  box-shadow: 0 6rpx 24rpx rgba(124, 92, 255, 0.45);
+}
+
+.word-card {
+  padding: 34rpx;
+  margin-bottom: 30rpx;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 18rpx;
+  margin-bottom: 18rpx;
+}
+
+.word-left {
+  display: flex;
+  align-items: center;
+}
+
+.word-text {
+  font-size: 38rpx;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1rpx;
+}
+
+.speaker {
+  font-size: 32rpx;
+  margin-left: 16rpx;
+  padding: 8rpx;
+  opacity: 0.8;
+}
+
+.speaker:active {
+  opacity: 0.4;
+  transform: scale(0.9);
+}
+
+.meaning-text {
+  font-size: 30rpx;
+  color: #a78bfa;
+  font-weight: 700;
+  margin-bottom: 12rpx;
+}
+
+.exp-text {
+  font-size: 26rpx;
+  color: #9aa0c4;
+  line-height: 1.6;
+  margin-bottom: 22rpx;
+}
+
+.code-box {
+  position: relative;
+  background: rgba(10, 14, 39, 0.9);
+  border: 1rpx solid rgba(167, 139, 250, 0.18);
+  padding: 24rpx;
+  border-radius: 18rpx;
+  color: #c7cbe8;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 24rpx;
+  word-break: break-all;
+  line-height: 1.7;
+}
+
+.code-box:active {
+  background: rgba(10, 14, 39, 0.65);
+}
+
+.copy-tip {
+  position: absolute;
+  right: 16rpx;
+  bottom: 12rpx;
+  font-size: 20rpx;
+  color: #8a8fb0;
+  background: rgba(167, 139, 250, 0.15);
+  padding: 4rpx 14rpx;
+  border-radius: 20rpx;
+}
+
+.master-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 22rpx;
+}
+
+.status-btn {
+  padding: 12rpx 30rpx;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.status-btn:active {
+  transform: scale(0.94);
+}
+
+.unmastered {
+  background: rgba(255, 255, 255, 0.1);
+  color: #c4b5fd;
+  border: 1rpx solid rgba(167, 139, 250, 0.3);
+}
+
+.mastered {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  color: #ffffff;
+  box-shadow: 0 6rpx 20rpx rgba(46, 204, 113, 0.35);
+}
+
+.load-tip {
+  text-align: center;
+  color: #8a8fb0;
+  font-size: 24rpx;
+  padding: 30rpx 0;
+}
+
+.light .page-title {
+  color: #2b2f4a;
+}
+
+.light .search-input {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1rpx solid rgba(124, 92, 255, 0.25);
+  box-shadow: 0 6rpx 20rpx rgba(124, 92, 255, 0.12);
+  color: #2b2f4a;
+}
+
+.light .ph-color {
+  color: #9a9ec0;
+}
+
+.light .tab-item {
+  background: rgba(124, 92, 255, 0.06);
+  color: #7c82a8;
+  border: 1rpx solid rgba(124, 92, 255, 0.16);
+}
+
+.light .word-text {
+  color: #2b2f4a;
+}
+
+.light .card-header {
+  border-bottom: 1rpx solid rgba(90, 80, 160, 0.12);
+}
+
+.light .meaning-text {
+  color: #7c5cff;
+}
+
+.light .exp-text {
+  color: #5d6185;
+}
+
+.light .code-box {
+  background: #1e2238;
+  border: 1rpx solid rgba(255, 255, 255, 0.06);
+  color: #c7cbe8;
+}
+
+.light .unmastered {
+  background: rgba(124, 92, 255, 0.1);
+  color: #6d4fe6;
+  border: 1rpx solid rgba(124, 92, 255, 0.3);
+}
+
+.light .load-tip {
+  color: #9a9ec0;
+}
