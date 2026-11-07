@@ -8,7 +8,7 @@
 
 | 词典首页 | 分类筛选 | 代码速查 | 我的学习 |
 | --- | --- | --- | --- |
-| _待添加_ | _待添加_ | _待添加_ | _待添加_ |
+| ![首页](screenshots/home.png) | ![列表](screenshots/list.png) | ![速查](screenshots/snippet.png) | ![我的](screenshots/me.png) |
 
 ## ✨ 核心功能
 
