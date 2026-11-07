@@ -34,6 +34,51 @@ Page({
         id: 6, title: 'CSS 隐藏滚动条', tag: 'CSS',
         keywords: '隐藏 滚动条 滑动 scrollbar',
         code: '::-webkit-scrollbar { display: none; }'
+      },
+      {
+        id: 7, title: 'JS 数组求和', tag: 'JS',
+        keywords: '求和 reduce 累加 总和',
+        code: 'const sum = arr.reduce((s, n) => s + n, 0);'
+      },
+      {
+        id: 8, title: 'JS 数组最大值', tag: 'JS',
+        keywords: '最大 最小值 math max min',
+        code: 'const max = Math.max(...arr);\nconst min = Math.min(...arr);'
+      },
+      {
+        id: 9, title: 'JS 日期格式化', tag: 'JS',
+        keywords: '日期 格式化 时间 YYYY-MM-DD',
+        code: "const d = new Date();\nconst str = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;"
+      },
+      {
+        id: 10, title: 'JS 本地存储', tag: 'JS',
+        keywords: '本地存储 localStorage 缓存 持久化',
+        code: "wx.setStorageSync('key', {name: 'tom'});\nconst data = wx.getStorageSync('key');"
+      },
+      {
+        id: 11, title: 'CSS 居中弹窗', tag: 'CSS',
+        keywords: '弹窗 模态 居中 fixed 定位',
+        code: '.modal {\n  position: fixed; top: 50%; left: 50%;\n  transform: translate(-50%, -50%);\n}'
+      },
+      {
+        id: 12, title: 'CSS 文字省略号', tag: 'CSS',
+        keywords: '省略号 截断 单行 多行 text-overflow',
+        code: '.ellipsis {\n  overflow: hidden; text-overflow: ellipsis;\n  white-space: nowrap;\n}'
+      },
+      {
+        id: 13, title: 'JS 防抖搜索', tag: 'JS',
+        keywords: '搜索 输入 防抖 search input',
+        code: "let timer;\nconst onSearch = (kw) => {\n  clearTimeout(timer);\n  timer = setTimeout(() => query(kw), 300);\n};"
+      },
+      {
+        id: 14, title: '小程序云数据库查询', tag: '云开发',
+        keywords: '云开发 数据库 query collection where',
+        code: "wx.cloud.database().collection('words')\n  .where({language: 'JS'}).get()\n  .then(res => console.log(res.data));"
+      },
+      {
+        id: 15, title: 'JS 深拷贝处理嵌套', tag: 'JS',
+        keywords: '深拷贝 嵌套 对象 递归 structuredClone',
+        code: 'const deepClone = (obj) => structuredClone(obj);'
       }
     ],
     snippets: []
